@@ -1,0 +1,1 @@
+# fastify-typescript-request-schema
