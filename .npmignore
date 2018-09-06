@@ -1,0 +1,7 @@
+.circleci
+src
+gulpfile.js
+index.js
+tsconfig.json
+tslint.json
+.editorconfig

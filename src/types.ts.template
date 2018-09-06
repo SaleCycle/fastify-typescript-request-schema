@@ -1,0 +1,27 @@
+/**
+ * This file was automatically generated.
+ * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
+ * and run the `yarn run generateTypes` script to regenerate this file.
+ */
+
+import { FastifyRequest } from 'fastify';
+import { IncomingMessage } from 'http';
+
+{{#each compiled}}
+{{{this}}}
+{{/each ~}}
+
+export interface I{{interfaceName}} extends FastifyRequest<IncomingMessage> {
+  {{#if compiled.params}}
+  params: IParams;
+  {{/if ~}}
+  {{#if compiled.querystring}}
+  query: IQuerystring;
+  {{/if ~}}
+  {{#if compiled.headers}}
+  headers: IHeaders;
+  {{/if ~}}
+  {{#if compiled.body}}
+  body: IBody;
+  {{/if ~}}
+}
