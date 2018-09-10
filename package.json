@@ -1,6 +1,6 @@
 {
   "name": "@salecycle/fastify-typescript-request-schema",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": ".dist/src/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "author": "Salecycle Assets Team",
   "license": "MIT",
   "bin": {
-    "fastify-typescript-request-schema": "./bin/fastify-typescript-request-schema"
+    "fastify-typescript-request-schema": "./bin/fastify-typescript-request-schema.js"
   },
   "devDependencies": {
     "@types/chai": "^4.1.4",
