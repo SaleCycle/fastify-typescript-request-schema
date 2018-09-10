@@ -2,13 +2,13 @@
   "name": "@salecycle/fastify-typescript-request-schema",
   "version": "1.0.0",
   "description": "",
-  "main": ".dist/index.js",
+  "main": ".dist/src/index.js",
   "scripts": {
     "lint": "tslint -p ./tsconfig.json -t stylish",
     "pretest": "yarn run lint",
     "test": "mocha --recursive --exit --require ts-node/register \"test/**/*.test.ts\"",
     "prebuild": "rm -rf ./.dist",
-    "build": "tsc -p . --outDir .dist; cp src/types.ts.template .dist/types.ts.template;"
+    "build": "tsc -p . --outDir .dist; cp src/types.ts.template .dist/src/types.ts.template; rm -rf .dist/test;"
   },
   "repository": {
     "type": "git",
