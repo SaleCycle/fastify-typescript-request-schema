@@ -10,7 +10,7 @@ const compileConfig = {
   bannerComment: '',
   style: { singleQuote: true }
 };
-const outputFilename = 'schema.d.ts';
+const outputFilename = 'schema.ts';
 const template = handlebars.compile(fs.readFileSync(path.join(__dirname, 'types.ts.template')).toString());
 
 export async function compileFile(filePath: string): Promise<IOutput> {
