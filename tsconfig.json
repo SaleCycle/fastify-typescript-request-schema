@@ -8,7 +8,8 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "declaration": true
+    "declaration": true,
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts"

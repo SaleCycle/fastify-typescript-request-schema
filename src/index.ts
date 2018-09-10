@@ -10,15 +10,14 @@ const compileConfig = {
   bannerComment: '',
   style: { singleQuote: true }
 };
-const outputFilename = 'types.ts';
-const schemaGlob = path.join(process.cwd(), 'src', '**', 'schema.ts');
+const outputFilename = 'schema.d.ts';
 const template = handlebars.compile(fs.readFileSync(path.join(__dirname, 'types.ts.template')).toString());
 
-async function compileFile(filePath: string): Promise<IOutput> {
+export async function compileFile(filePath: string): Promise<IOutput> {
   const processedSchema: ProcessedSchema = [];
   const output: IOutput = {};
 
-  const schemaFile = require(filePath).default;
+  const schemaFile = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   const schemaKeys = Object.keys(schemaFile).sort();
 
   schemaKeys.forEach((schemaName) => {
@@ -42,7 +41,7 @@ async function compileFile(filePath: string): Promise<IOutput> {
   return output;
 }
 
-function convert(): void {
+export default function convert(schemaGlob): void {
   // find all filepaths for any files called 'schema.ts'
   const filePaths = glob.sync(schemaGlob);
 
@@ -61,5 +60,3 @@ function convert(): void {
     }
   });
 }
-
-convert();
