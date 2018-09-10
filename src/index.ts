@@ -42,10 +42,12 @@ export async function compileFile(filePath: string): Promise<IOutput> {
 }
 
 export default function convert(schemaGlob): void {
+  console.log(`looking for fastify request schemas in ${schemaGlob}`);
   // find all filepaths for any files called 'schema.ts'
   const filePaths = glob.sync(schemaGlob);
 
   filePaths.forEach(async (filePath) => {
+    console.log(`found fastify request schemas in ${filePath}`);
     const filePathArr = filePath.split('/');
     const origFolder = filePathArr.slice(0, filePathArr.length - 1).join('/');
     const compiledData = await compileFile(filePath);
@@ -56,7 +58,10 @@ export default function convert(schemaGlob): void {
         interfaceName: 'Request'
       });
 
-      fs.writeFileSync(path.join(origFolder, outputFilename), fileData);
+      const outputPath = path.join(origFolder, outputFilename);
+      console.log(`writing typescript schema to ${outputPath}`);
+
+      fs.writeFileSync(outputPath, fileData);
     }
   });
 }
