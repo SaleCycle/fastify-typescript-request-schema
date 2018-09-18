@@ -12,14 +12,5 @@
     ],
     "type": "object",
     "additionalProperties": false
-  },
-  "response": {
-    "200": {
-      "description": "an array of ids",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
   }
 }

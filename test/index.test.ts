@@ -25,4 +25,15 @@ describe('simple conversion', () => {
         done();
       });
   });
+
+  it('should convert responses to a type per response code', (done) => {
+    compileFile(path.join(__dirname, 'responseSchema.schema.json'))
+      .then((converted) => {
+        expect(converted.response200).to.not.be.null;
+        done();
+      })
+      .catch((ex) => {
+        done(ex);
+      });
+  });
 });

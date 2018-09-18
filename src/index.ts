@@ -23,7 +23,17 @@ export async function compileFile(filePath: string): Promise<IOutput> {
   schemaKeys.forEach((schemaName) => {
     const schema = schemaFile[schemaName];
 
-    if (schema.properties) {
+    if (schemaName === 'response') {
+      // special handling for response schemas as they are wrapped in response types
+      const responseCodeKeys = Object.keys(schema).sort();
+      responseCodeKeys.forEach((responseCode) => {
+        const responseSchema = schema[responseCode];
+        processedSchema.push({
+          name: `response${responseCode}`,
+          promise: compile(responseSchema, `I${responseCode}Response`, compileConfig)
+        });
+      });
+    } else if (schema.properties) {
       processedSchema.push({
         name: schemaName,
         promise: compile(schema, `I${capitalizeFirstLetter(schemaName)}`, compileConfig)

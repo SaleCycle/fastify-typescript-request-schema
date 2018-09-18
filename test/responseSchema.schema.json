@@ -1,0 +1,17 @@
+{
+  "description": "get a list of recent ids",
+  "response": {
+    "200": {
+      "properties": {
+        "id": {
+          "description": "the customer id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    }
+  }
+}
