@@ -1,6 +1,6 @@
 {
   "name": "@salecycle/fastify-typescript-request-schema",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "",
   "main": ".dist/src/index.js",
   "scripts": {
@@ -25,22 +25,22 @@
     "fastify-typescript-request-schema": "./bin/fastify-typescript-request-schema.js"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.4",
+    "@types/chai": "^4.1.6",
     "@types/config": "0.0.34",
-    "@types/glob": "^5.0.35",
+    "@types/glob": "^7.1.1",
     "@types/handlebars": "^4.0.39",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.10.1",
-    "chai": "^4.1.2",
+    "@types/node": "^10.11.4",
+    "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.1.1"
   },
   "dependencies": {
     "glob": "^7.1.3",
     "handlebars": "^4.0.12",
-    "json-schema-to-typescript": "^5.7.0"
+    "json-schema-to-typescript": "^6.0.1"
   },
   "bugs": {
     "url": "https://github.com/SaleCycle/fastify-typescript-request-schema/issues"
